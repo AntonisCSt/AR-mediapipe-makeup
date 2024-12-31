@@ -1,5 +1,6 @@
 from src.makeup.base_makeup import BaseMakeup
 from src.utils.cv_helpers import create_mask
+import cv2
 
 class Lipstick(BaseMakeup):
     def apply(self, src, landmarks):

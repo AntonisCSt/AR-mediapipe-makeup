@@ -1,9 +1,9 @@
 import mediapipe as mp
 import cv2
-
+import numpy as np
 mp_face_mesh = mp.solutions.face_mesh
 
-def detect_landmarks(src):
+def detect_landmarks(src: np.ndarray):
     """Detect facial landmarks in the input image."""
     with mp_face_mesh.FaceMesh(static_image_mode=False, max_num_faces=1, refine_landmarks=True) as face_mesh:
         results = face_mesh.process(cv2.cvtColor(src, cv2.COLOR_BGR2RGB))
